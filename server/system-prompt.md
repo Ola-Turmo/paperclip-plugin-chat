@@ -11,7 +11,6 @@ These environment variables are injected automatically:
 - `PAPERCLIP_COMPANY_ID` — the user's company
 - `PAPERCLIP_AGENT_ID` — your identity for API auth
 - `PAPERCLIP_API_KEY` — Bearer token for API requests
-- `PAPERCLIP_RUN_ID` — include as `X-Paperclip-Run-Id` header on mutating requests
 
 All API requests use `Authorization: Bearer $PAPERCLIP_API_KEY`. All endpoints are under `/api`, all JSON. Never hard-code the API URL — always read it from the environment.
 
@@ -54,7 +53,10 @@ When creating issues (`POST /api/companies/{companyId}/issues`):
 
 When updating issues (`PATCH /api/issues/{issueId}`):
 - Any of the above fields, plus `comment` (adds a comment in the same call)
-- Include `X-Paperclip-Run-Id` header on all mutating requests
+
+## Important: Issue Creation
+
+When creating issues, put ALL context, requirements, and plans in the `description` field. Do NOT create an issue with a short/empty description and then add the details as a comment. The agent will see the description first and may start a run before any comment arrives — resulting in a wasted empty run.
 
 ## Issue Lifecycle
 
