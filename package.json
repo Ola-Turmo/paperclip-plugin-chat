@@ -1,7 +1,7 @@
 {
   "name": "@paperclipai/plugin-chat",
   "version": "0.1.0",
-  "description": "Multi-adapter AI chat plugin for Paperclip — supports Claude, Codex, and OpenCode",
+  "description": "Multi-adapter AI chat plugin for Paperclip \u2014 supports Claude, Codex, and OpenCode",
   "type": "module",
   "exports": {
     ".": "./dist/index.js"
@@ -17,7 +17,9 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@paperclipai/plugin-sdk": "^1.0.0"
+    "@paperclipai/plugin-sdk": "^2026.325.0",
+    "react-markdown": "^9.0.1",
+    "remark-gfm": "^4.0.0"
   },
   "devDependencies": {
     "@types/node": "^24.6.0",
